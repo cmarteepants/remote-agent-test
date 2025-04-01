@@ -71,29 +71,31 @@ def example_astronauts():
                 {"craft": "Tiangong", "name": "Ye Guangfu"},
             ]
 
-        context["ti"].xcom_push(
-            key="number_of_people_in_space", value=number_of_people_in_space
-        )
-        return list_of_people_in_space
+        # context["ti"].xcom_push(
+        #     key="number_of_people_in_space", value=number_of_people_in_space
+        # )
 
-    @task
-    def print_astronaut_craft(greeting: str, person_in_space: dict) -> None:
-        """
-        This task creates a print statement with the name of an
-        Astronaut in space and the craft they are flying on from
-        the API request results of the previous task, along with a
-        greeting which is hard-coded in this example.
-        """
-        craft = person_in_space["craft"]
-        name = person_in_space["name"]
+        print(number_of_people_in_space)
+        # return list_of_people_in_space
 
-        print(f"{name} is currently in space flying on the {craft}! {greeting}")
+    # @task
+    # def print_astronaut_craft(greeting: str, person_in_space: dict) -> None:
+    #     """
+    #     This task creates a print statement with the name of an
+    #     Astronaut in space and the craft they are flying on from
+    #     the API request results of the previous task, along with a
+    #     greeting which is hard-coded in this example.
+    #     """
+    #     craft = person_in_space["craft"]
+    #     name = person_in_space["name"]
 
-    # Use dynamic task mapping to run the print_astronaut_craft task for each
-    # Astronaut in space
-    print_astronaut_craft.partial(greeting="Hello! :)").expand(
-        person_in_space=get_astronauts()  # Define dependencies using TaskFlow API syntax
-    )
+    #     print(f"{name} is currently in space flying on the {craft}! {greeting}")
+
+    # # Use dynamic task mapping to run the print_astronaut_craft task for each
+    # # Astronaut in space
+    # print_astronaut_craft.partial(greeting="Hello! :)").expand(
+    #     person_in_space=get_astronauts()  # Define dependencies using TaskFlow API syntax
+    # )
 
 
 # Instantiate the DAG
