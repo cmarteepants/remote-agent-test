@@ -82,7 +82,7 @@ def example_astronauts():
     def print_hello_world_v2():
         print("Hello World!")
 
-    get_astronauts() >> print_hello_world()
+    get_astronauts() >> print_hello_world_v2()
 
     # @task
     # def print_astronaut_craft(greeting: str, person_in_space: dict) -> None:
