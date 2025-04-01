@@ -79,7 +79,7 @@ def example_astronauts():
         # return list_of_people_in_space
 
     @task
-    def print_hello_world()
+    def print_hello_world():
         print("Hello World!")
 
     get_astronauts() >> print_hello_world()
