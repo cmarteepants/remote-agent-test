@@ -1,1 +1,1 @@
-FROM quay.io/astronomer/astro-runtime:12.7.1
+FROM air.astronomer.io/runtime-dev:3.0-1-nightly202504010001
