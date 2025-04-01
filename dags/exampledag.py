@@ -78,6 +78,12 @@ def example_astronauts():
         print(number_of_people_in_space)
         # return list_of_people_in_space
 
+    @task
+    def print_hello_world()
+        print("Hello World!")
+
+    get_astronauts() >> print_hello_world()
+
     # @task
     # def print_astronaut_craft(greeting: str, person_in_space: dict) -> None:
     #     """
