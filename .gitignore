@@ -11,3 +11,4 @@ airflow.cfg
 airflow.db
 image-secret.yaml
 values.yaml
+manifest.yaml
